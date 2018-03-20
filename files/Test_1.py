@@ -4,8 +4,9 @@ import os
 comm = MPI.COMM_WORLD
 rank = comm.rank
 
-print "My name is: ", comm.rank
+
 
 if rank != 0:
-	os.system("docker swarm join --token SWMTKN-1-5sjbfzctsjmf0osxqwijks43xvly4resj3kslh7gs5kxnnu0ci-er6dbk8m3hyngoa4ny194vyd6 192.168.10.1:2377")
+	print "My name is: ", comm.rank
+	os.system("sudo docker swarm join --token SWMTKN-1-5sjbfzctsjmf0osxqwijks43xvly4resj3kslh7gs5kxnnu0ci-er6dbk8m3hyngoa4ny194vyd6 192.168.10.1:2377")
 
