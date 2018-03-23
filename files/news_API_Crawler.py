@@ -10,6 +10,7 @@ redundancy of news articles.
 from mpi4py import MPI
 from datetime import datetime
 from dateutil import parser
+from newsaoi import NewsApiClient
 import os
 import requests
 
@@ -44,7 +45,7 @@ all_articles = newsapi.get_everything(q = 'Bitcoin',
 	from_parameter = dateRange(rank),
 	to = dateRange(rank + 1),
 	sort_by = 'popularity'
-response = requests.get(url)
+
 
 #Prints file with data
 with open('Bitcoin_Test.txt', 'w') as f:
