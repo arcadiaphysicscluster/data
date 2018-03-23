@@ -44,7 +44,7 @@ newsapi = NewsApiClient(api_key = 'e1a07328c78945b1ab26c4d1df03d4f3')
 all_articles = newsapi.get_everything(q = 'Bitcoin',
 	from_parameter = dateRange(rank),
 	to = dateRange(rank + 1),
-	sort_by = 'popularity'
+	sort_by = 'popularity')
 
 
 #Prints file with data
