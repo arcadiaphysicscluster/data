@@ -49,4 +49,4 @@ all_articles = newsapi.get_everything(q = 'Bitcoin',
 
 #Prints file with data
 with open('Bitcoin_Test.txt', 'w') as f:
-	print(r.json, Bitcoin_Test.txt, file=f)
+	print(all_articles, Bitcoin_Test.txt, file=f)
