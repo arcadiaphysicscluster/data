@@ -34,8 +34,8 @@ end = '20180322'	#end date
 dateRange = list(date_range(begin,end,10))	#10 different dates
 
 #This is to dynamically add the date in the newsAPI url options
-beginDate = 'from=', dateRange(rank),'&'
-endDate = 'to=', dateRange(rank + 1), '&'
+beginDate = 'from=' + dateRange(rank) + '&'
+endDate = 'to=' + dateRange(rank + 1) + '&'
 
 #newsAPI url crawler
 url = ('https://newsapi.org/v2/everything?'
