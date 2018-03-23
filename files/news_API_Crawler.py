@@ -48,5 +48,5 @@ all_articles = newsapi.get_everything(q = 'Bitcoin',
 
 
 #Prints file with data
-f = open('Bitcoin_headlines.txt', 'w')
+f = open('~/cloud/Bitcoin_headlines.txt', 'w')
 print >>f, all_articles
