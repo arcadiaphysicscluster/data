@@ -30,7 +30,7 @@ def date_range(start, end, intv):
     endDate = parser.parse(end.strftime("%Y%m%d"))
     yield endDate.isoformat()
 
-begin = '20180301'	#begin date
+begin = '20120101'	#begin date
 end = '20180322'	#end date
 dateRange = list(date_range(begin,end,10))	#10 different dates
 
