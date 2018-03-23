@@ -10,7 +10,7 @@ redundancy of news articles.
 from mpi4py import MPI
 from datetime import datetime
 from dateutil import parser
-from newsaoi import NewsApiClient
+from newsapi import NewsApiClient
 import os
 import requests
 
