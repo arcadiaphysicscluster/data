@@ -42,8 +42,8 @@ dateRange = list(date_range(begin,end,10))	#10 different dates
 
 newsapi = NewsApiClient(api_key = 'e1a07328c78945b1ab26c4d1df03d4f3')
 all_articles = newsapi.get_everything(q = 'Bitcoin',
-	from_parameter = dateRange(rank),
-	to = dateRange(rank + 1),
+	from_parameter = str(dateRange(rank)),
+	to = str(dateRange(rank + 1)),
 	sort_by = 'popularity')
 
 
