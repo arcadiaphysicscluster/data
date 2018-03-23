@@ -34,16 +34,16 @@ end = '20180322'	#end date
 dateRange = list(date_range(begin,end,10))	#10 different dates
 
 #This is to dynamically add the date in the newsAPI url options
-beginDate = 'from=' + str(dateRange(rank)) + '&'
-endDate = 'to=' + str(dateRange(rank + 1)) + '&'
+#beginDate = 'from=' + str(dateRange(rank))
+#endDate = 'to=' + str(dateRange(rank + 1))
 
 #newsAPI url crawler
-url = ('https://newsapi.org/v2/everything?'
-	'q=Bitcoin&'
-	beginDate
-	endDate
-	'sortBy=popularity&'
-	'apiKey=e1a07328c78945b1ab26c4d1df03d4f3')
+
+newsapi = NewsApiClient(api_key = 'e1a07328c78945b1ab26c4d1df03d4f3')
+all_articles = newsapi.get_everything(q = 'Bitcoin',
+	from_parameter = dateRange(rank),
+	to = dateRange(rank + 1),
+	sort_by = 'popularity'
 response = requests.get(url)
 
 #Prints file with data
