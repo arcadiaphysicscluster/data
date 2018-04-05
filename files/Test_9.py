@@ -6,7 +6,7 @@ size = comm.size
 name = MPI.Get_processor_name()
 
 if rank == 0:
-	data = [ (x for x in range(size * 10)]
+	data = [ x for x in range(size * 10)]
 	print 'we will be scattering:', data
 	
 else:
