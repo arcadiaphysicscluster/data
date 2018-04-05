@@ -12,6 +12,7 @@ if rank == 0:
 	print 'we will be scattering:', data , 'into', size, 'chunks'
 	
 else:
+	data = None
 	data_chunks = None
 	
 data = comm.scatter(data_chunks, root = 0)
