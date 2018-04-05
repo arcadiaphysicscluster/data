@@ -9,7 +9,8 @@ if rank == 0:
 	data = [ x for x in range(size * 10)]
 	chunks = [[] for _ in range(size)]
     for i, chunk in enumerate(data):
-		chunks[i % size].append(chunk)
+		chunks[ i % size].append(chunk)
+		
 	print 'we will be scattering:', data , 'into', size, 'chunks'
 	
 else:
