@@ -24,14 +24,14 @@ else:
 	data_chunks = None
 	
 recvbuf = [100]
-data = comm.Scatter(data_chunks, recvbuf, root = 0)
+data = comm.Scatter(data_chunks, recvbuf, dtype='i')
 
 print 'rank', rank, 'has data:', data_chunks
 
 for i in range(len(data_chunks)):
 	data_chunks[i] = data_chunks[i] + 1
 
-newData = comm.Gather(data_chunks, recvbuf, root = 0)
+newData = comm.Gather(data_chunks, recvbuf, dtype='i')
 
 if rank == 0:
 	print 'master collected:', newData
