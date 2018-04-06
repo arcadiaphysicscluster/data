@@ -1,4 +1,5 @@
 from mpi4py import MPI
+import numpy as np
 
 comm = MPI.COMM_WORLD
 rank = comm.rank
@@ -24,7 +25,9 @@ else:
 	
 recvbuf = np.empty(100, dtype='i')
 data = comm.Scatter(data_chunks, recvbuf, root = 0)
+
 print 'rank', rank, 'has data:', data_chunks
+
 for i in range(len(data_chunks)):
 	data_chunks[i] = data_chunks[i] + 1
 
