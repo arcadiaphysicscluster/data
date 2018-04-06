@@ -23,7 +23,7 @@ else:
 	data = None
 	data_chunks = None
 	
-recvbuf = np.empty(100, dtype='i')
+recvbuf = [100]
 data = comm.Scatter(data_chunks, recvbuf, root = 0)
 
 print 'rank', rank, 'has data:', data_chunks
