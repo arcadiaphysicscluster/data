@@ -22,12 +22,12 @@ else:
 	data = None
 	data_chunks = None
 	
-data = comm.scatter(data_chunks, root = 0)
+data = comm.Scatter(data_chunks, root = 0)
 print 'rank', rank, 'has data:', data_chunks
 for i in range(len(data_chunks)):
 	data_chunks[i] = data_chunks[i] + 1
 
-newData = comm.gather(data_chunks, root = 0)
+newData = comm.Gather(data_chunks, root = 0)
 
 if rank == 0:
 	print 'master collected:', newData
