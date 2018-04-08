@@ -21,9 +21,9 @@ if rank == 0:
 	
 else:
 	data = None
-	data_chunks = None
-	
-recvbuf = [100]
+#	data_chunks = None
+
+recvbuf = [0 for x in range(size * 10)]
 comm.Scatter(data, recvbuf, root = 0)
 
 print 'rank', rank, 'has data:', data
