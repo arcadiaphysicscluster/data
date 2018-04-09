@@ -20,10 +20,8 @@ if rank == 0:
 	print 'we will be scattering:', data , 'into', size, 'chunks'
 	
 else:
-	data = None
 	data_chunks = None
 
-recvbuf = np.empty(100, dtype='i')
 comm.scatter(data_chunks, root = 0)
 
 print 'rank', rank, 'has data:', data_chunks
