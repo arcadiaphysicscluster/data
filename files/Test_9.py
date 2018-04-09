@@ -28,7 +28,7 @@ comm.Scatter(data, recvbuf, root = 0)
 
 print 'rank', rank, 'has data:', data
 
-for i in range(len(data_chunks)):
+for i in range(len(data)):
 	data[i] = data[i] + 1
 
 comm.Gather(data, recvbuf, root = 0)
