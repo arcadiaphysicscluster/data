@@ -34,4 +34,4 @@ if data:
 comm.gather(data_chunks, root = 0)
 
 if rank == 0:
-	print 'master collected:', data
+	print 'master collected:', data_chunks
