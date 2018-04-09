@@ -24,14 +24,14 @@ else:
 	data_chunks = None
 
 recvbuf = np.empty(100, dtype='i')
-comm.Scatter(data_chunks, recvbuf, root = 0)
+comm.scatter(data_chunks, root = 0)
 
 print 'rank', rank, 'has data:', data_chunks
 if data:
 	for i in range(data_chunks.size()):
 		data_chunks[i] = data_chunks[i] + 1
 
-comm.Gather(data_chunks, recvbuf, root = 0)
+comm.gather(data_chunks, root = 0)
 
 if rank == 0:
 	print 'master collected:', data
