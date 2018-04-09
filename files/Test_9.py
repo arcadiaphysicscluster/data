@@ -28,7 +28,7 @@ comm.Scatter(data, recvbuf, root = 0)
 
 print 'rank', rank, 'has data:', data
 
-for i in range(data.size)):
+for i in range(data.size())):
 	data[i] = data[i] + 1
 
 comm.Gather(data, recvbuf, root = 0)
