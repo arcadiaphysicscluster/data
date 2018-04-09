@@ -27,9 +27,9 @@ recvbuf = np.empty(100, dtype='i')
 comm.Scatter(data, recvbuf, root = 0)
 
 print 'rank', rank, 'has data:', data
-
-for i in range(data.size()):
-	data[i] = data[i] + 1
+if data:
+	for i in range(data.size()):
+		data[i] = data[i] + 1
 
 comm.Gather(data, recvbuf, root = 0)
 
