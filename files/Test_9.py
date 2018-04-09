@@ -14,7 +14,7 @@ def split_seq(seq, size):
         return newseq
 '''
 if rank == 0:
-	data = [ x for x in range(size * 10)]
+	data = np.arange(100)
 #	data_chunks = split_seq(data,size)
 		
 	print 'we will be scattering:', data , 'into', size, 'chunks'
@@ -23,13 +23,13 @@ else:
 	data = None
 #	data_chunks = None
 
-recvbuf = [0 for x in range(size * 10)]
+recvbuf = np.empty(100, dtype='i')
 comm.Scatter(data, recvbuf, root = 0)
 
 print 'rank', rank, 'has data:', data
 
 for i in range(len(data_chunks)):
-	data_chunks[i] = data_chunks[i] + 1
+	data[i] = data[i] + 1
 
 comm.Gather(data, recvbuf, root = 0)
 
