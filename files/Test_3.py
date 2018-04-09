@@ -1,6 +1,6 @@
 from mpi4py import MPI
 
-comm = COMM.MPI_WORLD
+comm = MPI.COMM_WORLD
 rank = comm.rank
 size = comm.size
  
