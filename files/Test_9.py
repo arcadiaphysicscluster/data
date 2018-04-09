@@ -26,10 +26,10 @@ else:
 recvbuf = np.empty(100, dtype='i')
 comm.Scatter(data_chunks, recvbuf, root = 0)
 
-print 'rank', rank, 'has data:', data
+print 'rank', rank, 'has data:', data_chunks
 if data:
 	for i in range(data_chunks.size()):
-		data[i] = data[i] + 1
+		data_chunks[i] = data_chunks[i] + 1
 
 comm.Gather(data_chunks, recvbuf, root = 0)
 
