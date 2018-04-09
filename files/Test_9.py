@@ -15,23 +15,23 @@ def split_seq(seq, size):
 '''
 if rank == 0:
 	data = np.arange(100)
-#	data_chunks = split_seq(data,size)
+	data_chunks = np.split(data,size)
 		
 	print 'we will be scattering:', data , 'into', size, 'chunks'
 	
 else:
 	data = None
-#	data_chunks = None
+	data_chunks = None
 
 recvbuf = np.empty(100, dtype='i')
-comm.Scatter(data, recvbuf, root = 0)
+comm.Scatter(data_chunks, recvbuf, root = 0)
 
 print 'rank', rank, 'has data:', data
 if data:
-	for i in range(data.size()):
+	for i in range(data_chunks.size()):
 		data[i] = data[i] + 1
 
-comm.Gather(data, recvbuf, root = 0)
+comm.Gather(data_chunks, recvbuf, root = 0)
 
 if rank == 0:
 	print 'master collected:', data
