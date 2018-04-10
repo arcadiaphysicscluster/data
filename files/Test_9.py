@@ -24,10 +24,12 @@ else:
 
 comm.scatter(data_chunks, root = 0)
 
-print('rank', rank, 'has data:', data_chunks)
+
 if data_chunks:
 	for i in range(len(data_chunks)):
 		data_chunks[i] = data_chunks[i] + 1
+		
+print('rank', rank, 'has data:', data_chunks)
 
 comm.gather(data_chunks, root = 0)
 
