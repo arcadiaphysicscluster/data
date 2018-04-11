@@ -23,4 +23,4 @@ data_chunks = data_chunks + 1
 data_chunks = comm.gather(data_chunks, root = 0)
 
 if rank == 0:
-	print('master collected:', data_chunks)
+	print('master collected:', np.argmin(data_chunks))
