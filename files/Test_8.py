@@ -14,3 +14,6 @@ else:
 	
 data = comm.scatter(data, root = 0)
 print('rank', rank, 'has data:', data)
+
+data = comm.gather(data, root = 0)
+print(name, 'collected', data)
