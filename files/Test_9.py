@@ -5,16 +5,9 @@ comm = MPI.COMM_WORLD
 rank = comm.rank
 size = comm.size
 name = MPI.Get_processor_name()
-'''
-def split_seq(seq, size):
-        newseq = []
-        splitsize = 1.0/size*len(seq)
-        for i in range(size):
-                newseq.append(seq[int(round(i*splitsize)):int(round((i+1)*splitsize))])
-        return newseq
-'''
+
 if rank == 0:
-	data = np.arange(100)
+	data = [x for x in range(size * 10)]
 	data_chunks = np.split(data,size)
 		
 	print('we will be scattering:', data , 'into', size, 'chunks')
