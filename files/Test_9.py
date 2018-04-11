@@ -11,7 +11,7 @@ if rank == 0:
 	data_chunks = np.empty([size, 100], dtype='i')
 	data_chunks.T[:,:] = range(size)
 		
-	print('we will be scattering:', data , 'into', size, 'chunks')
+	print('we will be scattering:', data_chunks , 'into', size, 'chunks')
 	
 recvbuf = np.empty(100, dtype='i')
 data_chunks = comm.Scatter(data_chunks,recvbuf,root = 0)
