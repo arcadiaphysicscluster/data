@@ -6,6 +6,7 @@ rank = comm.rank
 size = comm.size
 name = MPI.Get_processor_name()
 
+data_chunks = None
 if rank == 0:
 	data = np.arange(100)
 	data_chunks = np.split(data,size)
