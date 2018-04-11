@@ -70,7 +70,7 @@ def GBM(So, mu, sigma, W, T, N):
         S.append(S_temp)
     return S, t
 
-seed = data_chunk
+seed = data_chunks
 N = len(bitPrice) - 1
 So = bitPrice[0]
 W = Brownian(seed,N)[0]
