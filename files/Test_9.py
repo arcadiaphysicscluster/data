@@ -13,7 +13,7 @@ if rank == 0:
 	print('we will be scattering:', data , 'into', size, 'chunks')
 	
 else:
-	data_chunks = None
+	data_chunks = np.zeros(10)
 
 comm.scatter(data_chunks, root = 0)
 print(name, 'original data:', data_chunks)
