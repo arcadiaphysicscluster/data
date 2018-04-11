@@ -17,8 +17,8 @@ else:
 data_chunks = comm.scatter(data_chunks, root = 0)
 print(name, 'original data:', data_chunks)
 
-for i in range(len(data_chunks)):
-	data_chunks[i] = data_chunks[i] + 1
+
+data_chunks = data_chunks + 1
 
 data_chunks = comm.gather(data_chunks, root = 0)
 
