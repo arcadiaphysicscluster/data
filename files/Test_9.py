@@ -8,7 +8,7 @@ name = MPI.Get_processor_name()
 
 data_chunks = None
 if rank == 0:
-	data = np.empty([size, 100], dtype='i')
+	data_chunks = np.empty([size, 100], dtype='i')
 	data_chunks.T[:,:] = range(size)
 		
 	print('we will be scattering:', data , 'into', size, 'chunks')
