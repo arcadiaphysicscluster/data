@@ -15,5 +15,8 @@ else:
 data = comm.scatter(data, root = 0)
 print('rank', rank, 'has data:', data)
 
+for i in range(len(data)):
+		data[i] = data[i] + 1
+		
 data = comm.gather(data, root = 0)
-print(name, 'collected', data)
+print('master collected', data)
