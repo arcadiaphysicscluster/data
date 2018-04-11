@@ -90,7 +90,7 @@ for i in range(len(bitPrice)):
     solnFloat = float(soln[i])
     sumation = sumation + (bitFloat - solnFloat)
 
-print(sumation)
+#print(sumation)
 
 
 data_chunks = abs(sumation)
