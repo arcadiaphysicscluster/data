@@ -93,10 +93,10 @@ for i in range(len(bitPrice)):
 print(sumation)
 
 
-data_chunks = sumation
+data_chunks = abs(sumation)
 
 #--------------------------------------------------------------------------------------------------------
 data_chunks = comm.gather(data_chunks, root = 0)
 
 if rank == 0:
-	print('min value:', np.amin(abs(data_chunks)), 'with seed :', np.argmin(data_chunks) + 1)
+	print('min value:', np.amin(data_chunks), 'with seed :', np.argmin(data_chunks) + 1)
