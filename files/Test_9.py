@@ -81,7 +81,7 @@ soln = GBM(So, mu, sigma, W, T, N)[0]
 t = GBM(So, mu, sigma, W, T, N)[1]
 #plt.plot(t, soln)
 
-print(len(bitPrice), len(soln))
+#print(len(bitPrice), len(soln))
 
 sumation = 0
 
@@ -90,7 +90,7 @@ for i in range(len(bitPrice)):
     solnFloat = float(soln[i])
     sumation = sumation + (bitFloat - solnFloat)
 
-#print(sumation)
+print(sumation)
 
 
 data_chunks = sumation
@@ -99,4 +99,4 @@ data_chunks = sumation
 data_chunks = comm.gather(data_chunks, root = 0)
 
 if rank == 0:
-	print('min value:', np.amin(data_chunks), 'at data_chunks[', np.argmin(data_chunks), ']')
+	print('min value:', np.amin(data_chunks), 'with seed :', np.argmin(data_chunks) + 1)
