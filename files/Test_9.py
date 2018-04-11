@@ -19,8 +19,9 @@ data_chunks = comm.scatter(data_chunks, root = 0)
 
 #--------------------------------------------------------------------------------------------------------
 bitPrice = []
+data_chunks = data_chunks + 1
 
-with open(r'\home\pi\cloud\data\files\allData.csv', newline = '', mode = 'r+') as csvFile:
+with open(r'/home/pi/cloud/data/files/allData.csv', newline = '', mode = 'r+') as csvFile:
     reader = csv.reader(csvFile, delimiter = ',')
     next(reader)
     for row in reader:
