@@ -7,10 +7,9 @@ size = comm.size
 name = MPI.Get_processor_name()
 
 if rank == 0:
-	data = np.arange(100)
-	data_chunks = np.split(data,size)
+	data_chunks = np.arange(100)
 		
-	print('we will be scattering:', data , 'into', size, 'chunks')
+	print('we will be scattering:', data_chunks , 'into', size, 'chunks')
 	
 else:
 	data_chunks = None
