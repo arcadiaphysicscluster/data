@@ -8,7 +8,7 @@ size = comm.size
 name = MPI.Get_processor_name()
 
 if rank == 0:
-	data_chunks = np.arange(10)
+	data_chunks = np.arange(100) #number of nodes to perform operation on, so 10 nodes will get 10 operations
 		
 	print('we will be scattering:', data_chunks , 'into', size, 'chunks')
 	
