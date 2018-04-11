@@ -99,4 +99,4 @@ data_chunks = sumation
 data_chunks = comm.gather(data_chunks, root = 0)
 
 if rank == 0:
-	print('min value:', np.amin(data_chunks), 'with seed :', np.argmin(data_chunks) + 1)
+	print('min value:', np.amin(abs(data_chunks)), 'with seed :', np.argmin(data_chunks) + 1)
