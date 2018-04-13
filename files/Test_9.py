@@ -23,7 +23,8 @@ data_chunks = data_chunks + 1
 
 with open(r'/home/pi/cloud/data/files/allData.csv', newline = '', mode = 'r+') as csvFile:
     reader = csv.reader(csvFile, delimiter = ',')
-	for i in range(reader):
+	
+	for i in range(983):
 		next(reader)
     for row in reader:
         bitPrice.append(row[1])
