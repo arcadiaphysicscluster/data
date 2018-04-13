@@ -23,7 +23,8 @@ data_chunks = data_chunks + 1
 
 with open(r'/home/pi/cloud/data/files/allData.csv', newline = '', mode = 'r+') as csvFile:
     reader = csv.reader(csvFile, delimiter = ',')
-    next(reader)
+	for i in range(983):
+        next(reader)
     for row in reader:
         bitPrice.append(row[1])
 '''
@@ -45,8 +46,8 @@ def daily_return(bitPrice):
 
 returns = daily_return(bitPrice)
 
-mu = np.mean(returns) * 1309. #working days from 1/1/2011 to 3/30/2018
-sigma = np.std(returns) * np.sqrt(1309.) 
+mu = np.mean(returns) * 655 #working days from 1/1/2011 to 3/30/2018
+sigma = np.std(returns) * np.sqrt(655) 
 
 #print(mu, sigma)
 
