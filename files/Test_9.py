@@ -1,4 +1,4 @@
-from mpi4py import MPI
+﻿from mpi4py import MPI
 import numpy as np
 import csv
 
@@ -24,8 +24,8 @@ data_chunks = data_chunks + 1
 with open(r'/home/pi/cloud/data/files/allData.csv', newline = '', mode = 'r+') as csvFile:
     reader = csv.reader(csvFile, delimiter = ',')
 	
-	for i in range(983):
-		next(reader)
+    for i in range(983):
+	next(reader)
     for row in reader:
         bitPrice.append(row[1])
 '''
