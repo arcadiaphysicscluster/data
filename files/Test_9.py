@@ -25,7 +25,7 @@ with open(r'/home/pi/cloud/data/files/allData.csv', newline = '', mode = 'r+') a
     reader = csv.reader(csvFile, delimiter = ',')
 	
     for i in range(983):
-	next(reader)
+        next(reader)
     for row in reader:
         bitPrice.append(row[1])
 '''
