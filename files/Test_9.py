@@ -47,8 +47,8 @@ def daily_return(bitPrice):
 
 returns = daily_return(bitPrice)
 
-mu = np.mean(returns) * 655 #working days from 1/1/2011 to 3/30/2018
-sigma = np.std(returns) * np.sqrt(655) 
+mu = np.mean(returns) * (1310/4) #working days from 1/1/2011 to 3/30/2018
+sigma = np.std(returns) * np.sqrt(1310/4) 
 
 #print(mu, sigma)
 
