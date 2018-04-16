@@ -8,7 +8,7 @@ comm = MPI.COMM_WORLD
 rank = comm.Get_rank(); size = comm.Get_size()
 
 np.random.seed(seed=rank) # XXX should use parallel RNG
-obs = whiten(np.genfromtxt(’data.csv’, dtype=float, delimiter=’,’))
+obs = whiten(np.genfromtxt(’/home/pi/cloud/data/files/allData.csv’, dtype=float, delimiter=’,’))
 
 K = 10
 nstart = 100
