@@ -8,9 +8,10 @@ comm = MPI.COMM_WORLD
 rank = comm.Get_rank(); size = comm.Get_size()
 
 np.random.seed(seed=rank) # XXX should use parallel RNG
-obs = whiten(np.genfromtxt('/home/pi/cloud/data/files/allData.csv', dtype=float, delimiter=','))
 pipe = [('pca',PCA(whiten=True,svd_solver='full')),
    ('clf' ,lm)]
+obs = whiten(np.genfromtxt('/home/pi/cloud/data/files/allData.csv', dtype=float, delimiter=','))
+
 K = 10
 nstart = 100
 n = int(ceil(float(nstart) / size))
