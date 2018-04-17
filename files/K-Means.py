@@ -19,4 +19,4 @@ results = comm.gather((centroids, distortion), root=0)
 if rank == 0:
 	results.sort(key=itemgetter(1))
 	result = results[0]
-print('Best distortion for %d tries: %f' % (nstart, result[1]))
+	print('Best distortion for %d tries: %f' % (nstart, result[1]))
