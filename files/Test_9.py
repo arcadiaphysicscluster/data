@@ -105,4 +105,4 @@ data_chunks = comm.gather(data_chunks, root = 0)
 
 if rank == 0:
     print('min value:', np.amin(data_chunks), 'with seed :', np.argmin(data_chunks) + 1)
-    print(print('TIme it took:', time.time() - startTime, 'seconds')
+    print('TIme it took:', time.time() - startTime, 'seconds')
