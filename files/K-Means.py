@@ -24,5 +24,4 @@ if rank == 0:
     result = results[0]
     print('Best distortion for %d tries: %f' % (nstart, result[1]))
     print('Result Array:', result)
- 
-print('TIme it took:', time.time() - startTime, 'seconds')
+    print('TIme it took:', time.time() - startTime, 'seconds')
