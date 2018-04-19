@@ -3,6 +3,9 @@ from scipy.cluster.vq import kmeans, whiten
 from operator import itemgetter
 from math import ceil
 from mpi4py import MPI
+import time
+
+startTime = time.time()
 
 comm = MPI.COMM_WORLD
 rank = comm.Get_rank(); size = comm.Get_size()
@@ -21,3 +24,5 @@ if rank == 0:
     result = results[0]
     print('Best distortion for %d tries: %f' % (nstart, result[1]))
     print('Result Array:', result)
+ 
+print('TIme it took:', time.time() - startTime, 'seconds')
