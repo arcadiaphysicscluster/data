@@ -1,9 +1,9 @@
 ﻿from mpi4py import MPI
 import numpy as np
 from csv import reader
-from time import time
+import time
 
-startTime = time()
+startTime = time.time()
 
 comm = MPI.COMM_WORLD
 rank = comm.rank
@@ -105,4 +105,4 @@ data_chunks = comm.gather(data_chunks, root = 0)
 
 if rank == 0:
     print('min value:', np.amin(data_chunks), 'with seed :', np.argmin(data_chunks) + 1)
-    print('TIme it took:', time() - startTime, 'seconds')
+    print('TIme it took:', time.time() - startTime, 'seconds')
