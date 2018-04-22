@@ -100,7 +100,7 @@ for i in range(len(bitPrice)):
 
 #Using Euclidean distance(L-inifitinty)
 def dist(x,y):   
-    return numpy.sqrt(numpy.sum((x-y)**2))
+    return np.sqrt(np.sum((x-y)**2))
 
 
 dst = dist(bitPrice,soln)
