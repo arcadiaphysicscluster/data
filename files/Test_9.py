@@ -89,13 +89,18 @@ t = GBM(So, mu, sigma, W, T, N)[1]
 #print(len(bitPrice), len(soln))
 
 sumation = 0
+dst = distance.euclidean(bitPrice,soln)
 
+# Using L0 distance
 for i in range(len(bitPrice)):
     bitFloat = float(bitPrice[i])
     solnFloat = float(soln[i])
     sumation = sumation + (bitFloat - solnFloat)
-
+    if sumation == dst:
+        print(i)
 #print(sumation)
+
+#Using Euclidean distance(L-inifitinty)
 
 
 data_chunks = abs(sumation)
