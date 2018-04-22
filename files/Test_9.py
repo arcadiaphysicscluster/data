@@ -99,11 +99,9 @@ for i in range(len(bitPrice)):
 #print(sumation)
 
 #Using Euclidean distance(L-inifitinty)
-def dist(x,y):   
-    return np.sqrt(np.sum((x-y)**2))
 
 
-dst = dist(bitPrice,soln)
+dst = np.linalg.norm(bitPrice - soln)
 print(dst)
 
 data_chunks = abs(sumation)
