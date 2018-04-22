@@ -91,8 +91,8 @@ t = GBM(So, mu, sigma, W, T, N)[1]
 sumation = 0
 # Manhatten Distance: l_dist = 1
 # Euclidean Distance: l_dist = 2
-# Chebyshev Distance: l_dist = 
-l_dist = 30
+# Chebyshev Distance: l_dist = 10+ (all the same after a certain amount)
+l_dist = 10
 for i in range(len(bitPrice)):
     bitFloat = float(bitPrice[i])
     solnFloat = float(soln[i])
