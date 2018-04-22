@@ -11,7 +11,7 @@ size = comm.size
 name = MPI.Get_processor_name()
 
 if rank == 0:
-	data_chunks = np.arange(100,200) #number of nodes to perform operation on, so 10 nodes will get 10 operations
+	data_chunks = np.arange(200) #number of nodes to perform operation on, so 10 nodes will get 10 operations
 		
 	print('we will be scattering:', data_chunks , 'into', size, 'chunks')
 	
@@ -94,11 +94,11 @@ sumation = 0
 for i in range(len(bitPrice)):
     bitFloat = float(bitPrice[i])
     solnFloat = float(soln[i])
-    sumation = (bitFloat - solnFloat)**10          # Using L-inf distance
+    sumation = (bitFloat - solnFloat)**2          # Using L-inf distance
 #   sumation = sumation + (bitPrice[i] - soln[i)         Using L-0 distance
 #print(sumation)
 
-sumation = (sumation)**(1/10)
+sumation = (sumation)**(1/2)
 
 #Using Euclidean distance(L-inifitinty)
 
