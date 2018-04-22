@@ -90,11 +90,12 @@ t = GBM(So, mu, sigma, W, T, N)[1]
 
 sumation = 0
 
-# Using L0 distance
+
 for i in range(len(bitPrice)):
     bitFloat = float(bitPrice[i])
     solnFloat = float(soln[i])
-    sumation = (abs(bitPrice[i] - soln[i]))**2
+    sumation = ((bitPrice[i] - soln[i])**2          # Using L-inf distance
+#   sumation = sumation + (bitPrice[i] - soln[i)        # Using L-0 distance
 
 sumation = np.sqrt(sumation)
 #print(sumation)
