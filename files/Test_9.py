@@ -1,6 +1,7 @@
 ﻿from mpi4py import MPI
 import numpy as np
 from csv import reader
+from scipy.spatial import distance
 import time
 
 startTime = time.time()
