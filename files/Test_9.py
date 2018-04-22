@@ -89,16 +89,17 @@ t = GBM(So, mu, sigma, W, T, N)[1]
 #print(len(bitPrice), len(soln))
 
 sumation = 0
-
-
+# Manhatten Distance: l_dist = 1
+# Euclidean Distance: l_dist = 2
+# Chebyshev Distance: l_dist = 
+l_dist = 20
 for i in range(len(bitPrice)):
     bitFloat = float(bitPrice[i])
     solnFloat = float(soln[i])
-    sumation = sumation + (bitFloat - solnFloat)**10          # Using L-inf distance
-#   sumation = sumation + (bitPrice[i] - soln[i)         Using L-0 distance
+    sumation = sumation + (bitFloat - solnFloat)**l_dist
 #print(sumation)
 
-sumation = (sumation)**(1/10)
+sumation = (sumation)**(1/l_dist)
 
 #Using Euclidean distance(L-inifitinty)
 
