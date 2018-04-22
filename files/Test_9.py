@@ -94,15 +94,14 @@ sumation = 0
 for i in range(len(bitPrice)):
     bitFloat = float(bitPrice[i])
     solnFloat = float(soln[i])
-    sumation = sumation + (bitFloat - solnFloat)
+    sumation = np.linalg.norm(bitFloat - solnFloat)
 
 #print(sumation)
 
 #Using Euclidean distance(L-inifitinty)
 
 
-dst = np.linalg.norm(bitPrice - soln)
-print(dst)
+
 
 data_chunks = abs(sumation)
 
