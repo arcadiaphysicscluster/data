@@ -92,7 +92,7 @@ sumation = 0
 # Manhatten Distance: l_dist = 1
 # Euclidean Distance: l_dist = 2
 # Chebyshev Distance: l_dist = 
-l_dist = 20
+l_dist = 30
 for i in range(len(bitPrice)):
     bitFloat = float(bitPrice[i])
     solnFloat = float(soln[i])
