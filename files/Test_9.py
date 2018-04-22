@@ -1,7 +1,6 @@
 ﻿from mpi4py import MPI
 import numpy as np
 from csv import reader
-from scipy.spatial import distance
 import time
 
 startTime = time.time()
@@ -90,19 +89,22 @@ t = GBM(So, mu, sigma, W, T, N)[1]
 #print(len(bitPrice), len(soln))
 
 sumation = 0
-dst = distance.euclidean(bitPrice,soln)
 
 # Using L0 distance
 for i in range(len(bitPrice)):
     bitFloat = float(bitPrice[i])
     solnFloat = float(soln[i])
     sumation = sumation + (bitFloat - solnFloat)
-    if sumation == dst:
-        print(i)
+
 #print(sumation)
 
 #Using Euclidean distance(L-inifitinty)
+def dist(x,y):   
+    return numpy.sqrt(numpy.sum((x-y)**2))
 
+
+dst = dist(bitPrice,soln)
+print(dst)
 
 data_chunks = abs(sumation)
 
