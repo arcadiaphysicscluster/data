@@ -95,17 +95,17 @@ for i in range(len(bitPrice)):
     bitFloat = float(bitPrice[i])
     solnFloat = float(soln[i])
     sumation = ((bitPrice[i] - soln[i])**2          # Using L-inf distance
-#   sumation = sumation + (bitPrice[i] - soln[i)        # Using L-0 distance
-
-sumSQRT = np.sqrt(sumation)
+#   sumation = sumation + (bitPrice[i] - soln[i)         Using L-0 distance
 #print(sumation)
+
+sumation = np.sqrt(sumation)
 
 #Using Euclidean distance(L-inifitinty)
 
 
 
 
-data_chunks = abs(sumSQRT)
+data_chunks = sumation
 
 #--------------------------------------------------------------------------------------------------------
 data_chunks = comm.gather(data_chunks, root = 0)
