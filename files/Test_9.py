@@ -94,11 +94,11 @@ sumation = 0
 for i in range(len(bitPrice)):
     bitFloat = float(bitPrice[i])
     solnFloat = float(soln[i])
-    sumation = (bitFloat - solnFloat)**2          # Using L-inf distance
+    sumation = (bitFloat - solnFloat)**10          # Using L-inf distance
 #   sumation = sumation + (bitPrice[i] - soln[i)         Using L-0 distance
 #print(sumation)
 
-sumation = np.sqrt(sumation)
+sumation = (sumation)**(1/10)
 
 #Using Euclidean distance(L-inifitinty)
 
